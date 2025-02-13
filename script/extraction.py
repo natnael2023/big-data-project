@@ -3,10 +3,6 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-phone = os.environ.get("PHONE")
-api_id = os.environ.get("API_ID")
-api_hash = os.environ.get("API_HASH")
-
 
 
 def load_csv(filename):
