@@ -13,9 +13,12 @@ DB_PASSWORD = os.getenv("DB_PASSWORD")
 DB_HOST = os.getenv("DB_HOST")
 DB_PORT = os.getenv("DB_PORT")
 
-# Load data
+# extract/Load data
 file_path = "data/amz_ca_total_products_data_processed.csv"
 amazon_df = pd.read_csv(file_path)
+
+
+
 
 # PostgreSQL Connection
 conn = psycopg2.connect(
@@ -39,6 +42,8 @@ cursor.execute("""
     );
 """)
 conn.commit()
+
+
 
 # ✅ Insert data into PostgreSQL
 for _, row in amazon_df.iterrows():
